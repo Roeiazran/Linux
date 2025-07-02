@@ -78,21 +78,7 @@ void get_user_interruputs(int duration) {
 
 
 void clear_pending(sigset_t * mask) {
-
-    // struct sigaction sa;
-    // sa.sa_handler = SIG_IGN;
-    // sigemptyset(&sa.sa_mask);
-    // sigaction(SIGUSR1, &sa, NULL);
-    // sigaction(SIGUSR2, &sa, NULL);
-    // sigaction(SIGINT, &sa, NULL);
-
     sigprocmask(SIG_UNBLOCK, mask, NULL); /* clear the pending signals */
-
-    // sa.sa_handler = SIG_DFL;
-
-    // sigaction(SIGUSR1, &sa, NULL);
-    // sigaction(SIGUSR2, &sa, NULL);
-    // sigaction(SIGINT, &sa, NULL);
 }
 
 void handle_panding_interrupts() {
